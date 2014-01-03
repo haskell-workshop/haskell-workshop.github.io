@@ -8,8 +8,78 @@
   src: url("../fonts/pykes_peak_zero.otf") format("opentype");
 }
 
+
+body {
+    color: black;
+    font-size: 16px;
+    margin: 0px auto 0px 250px;
+    width: 600px;
+    padding-left: 50px;
+    background: url(../img/old_mathematics.png) repeat;
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+}
+
+div#header {
+    border-bottom: 2px solid black;
+    margin-bottom: 30px;
+    padding: 12px 0px 12px 0px;
+}
+
+div#logo a {
+    color: black;
+    float: left;
+    font-size: 18px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+div#header #navigation {
+    text-align: right;
+}
+
+div#header #navigation a {
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+    margin-left: 12px;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+div#footer {
+    border-top: solid 2px black;
+    color: #555;
+    font-size: 12px;
+    margin-top: 30px;
+    padding: 12px 0px 12px 0px;
+    text-align: right;
+}
+
+h1 {
+    font-size: 24px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+
+h1, h2, h3 {
+  /*color: #ed891b;*/
+  font-family: Pykes, Garamond, Times;
+  font-style: normal;
+  font-weight: 600;
+}
+
+
+div.info {
+    color: #555;
+    font-size: 14px;
+    font-style: italic;
+}
+
 #wrapper {
-  padding-left: 250px;
+  /*padding-left: 250px;*/
   transition: all 0.4s ease 0s;
 }
 
@@ -23,6 +93,8 @@
   overflow-y: auto;
   z-index: 1000;
   transition: all 0.4s ease 0s;
+  top: 0;
+  bottom: 0;
 }
 
 #page-content-wrapper {
@@ -30,12 +102,14 @@
 }
 
 .sidebar-nav {
-  position: absolute;
-  top: 0;
-  width: 250px;
+  background-color: #000;
+  left: 0;
   list-style: none;
   margin: 0;
   padding: 0;
+  position: absolute;
+  top: 0;
+  width: 250px;
 }
 
 .sidebar-nav li {
@@ -194,15 +268,7 @@
 
   }
 
-body {
-  background: url(../img/old_mathematics.png) repeat;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-}
 
-h1, h2, h3 {
-  /*color: #ed891b;*/
-  font-family: Pykes, Garamond, Times;
-  font-style: normal;
-  font-weight: 600;
-}
+
+
 

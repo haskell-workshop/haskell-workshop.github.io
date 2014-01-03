@@ -1,117 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="">
-    <meta name="author" content="">
+---
+title: Home
+---
 
-    <title>Haskell Workshop</title>
+<h2>Welcome</h2>
 
-    <!-- Add custom CSS here -->
-    <link href="/css/font-awesome.css" rel="stylesheet">
-        <!-- Bootstrap core CSS -->
-    <!-- <link href="/css/bootstrap.min.css" rel="stylesheet"> -->
+<img src="/images/haskell-logo.png" style="float: right; margin: 10px;" />
 
-    <!-- Custom CSS for the 'Full' Template --><!--
-    <link href="/css/style.css" rel="stylesheet"> -->
-    <style>
-      html {
-          background: #0B0B0B url(/img/dark_leather.png) repeat;
-          background-size: 100%;
-      }
-      .sidebar-nav {
-        margin-top: 150px;
-        text-align: center;
-      }
-      .sidebar-nav li a {
-       color: rgba(102, 86, 0, 0.6);
-       font-family: HeraBig, Garamond, Times;
-       font-size:2.1em;
-       line-height: 2em;
-       margin:20px 0;
-       text-align: center;
-       text-decoration: none;
-      }
-      .sidebar-nav img {
-        opacity: 0.7;
-        line-height: 0px;
-      }
-      .sidebar-nav img:hover {
-        opacity: 1;
-        line-height: 0px;
-      }
+<p>Welcome to my blog!</p>
 
-      #wrapper .sidebar-nav li {
-        list-style-type: none;
-      }
+<p>I've reproduced a list of recent posts here for your reading pleasure:</p>
 
-      #wrapper .sidebar-nav li a {
-        /*Transition*/
-        -webkit-transition: all 0.2s ease;
-        -moz-transition: all 0.2s ease;
-        -o-transition: all 0.2s ease;
-        /*font-size:1em;*/
+<h2>Posts</h2>
+$partial("templates/post-list.html")$
 
-        /*Reflection*/
-        -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.1)));
-      }
-
-      #wrapper .sidebar-nav li a:hover{
-         opacity: 1;
-         text-decoration: none;
-         color: rgba(229, 193, 5, 0.9);
-
-         /*Reflection*//*
-        -webkit-box-reflect: below 0px -webkit-gradient(linear, left top, left bottom, from(transparent), color-stop(.7, transparent), to(rgba(0,0,0,0.4)));*/
-
-         /*Glow*/
-        -webkit-shadow: 0px 0px 50px rgba(255,255,255,0.8);
-        -moz-shadow: 0px 0px 50px rgba(255,255,255,0.8);
-        /*box-shadow: 0px 0px 50px rgba(255,255,255,0.8);*/
-      }
-
-      /*Example 3*/
-      #co, #ev, #tu, .sidebar-brand {
-        /*width: 730px;*/
-        height: 83px;
-        line-height: 0px;
-        color: transparent;
-        /*font-size: 1.8em;*/
-        font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
-           /*font-weight: 100;*/
-        text-transform: uppercase;
-        -webkit-transition: all 0.5s ease;
-        -moz-transition: all 0.5s ease;
-        -o-transition: all 0.5s ease;
-      }
-
-      #co:hover, #ev:hover, #tu:hover {
-        color: #707272;
-      }
-    </style>
-  </head>
-
-  <body>
-
-    <div id="wrapper">
-      <ul class="sidebar-nav">
-      <li class="sidebar-brand"><a href="http://github.com/haskell-workshop">
-        <img src="/img/github.png" /></a>
-        <p>Follow us on Github!</p>
-      </li>
-      <li id="co"><a href="/colophon">Colophon</a><p>About Us</p></li>
-      <li id="ev"><a href="/events">Events</a><p>Meet Up</p></li>
-      <li id="tu"><a href="/tutorials">Tutorials</a><p>Learn</p></li>
-    </ul>
-
-   </div>
-
-
-    <!-- Bootstrap core JavaScript -->
-    <!-- Placed at the end of the document so the pages load faster -->
-    <script src="/js/jquery.js"></script>
-    <script src="/js/bootstrap.js"></script>
-    <script src="/js/custom.js"></script>
-  </body>
-</html>
+<p>…or you can find more in the <a href="/archive.html">archives</a>.
