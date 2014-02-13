@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+        <title>&quot;Mavericks and GHC&quot;</title>
+
+        <link href="/css/bootstrap.min.css" rel="stylesheet" />
+        <link rel="stylesheet" type="text/css" href="/css/style.css" />
+
+    </head>
+    <body>
+         <div id="wrapper">
+           <!-- Sidebar -->
+          <!--div id="sidebar-wrapper">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand">
+        <a href="/">
+        <i class="glyphicon glyphicon-home"></i>
+        </a>
+      </li>
+      <li><a href="/colophon">Colophon</a></li>
+      <li><a href="/events">Events</a></li>
+      <li><a href="/tutorials">Tutorials</a></li>
+    </ul>
+</div-->
+
+<div id="sidebar-wrapper">
+  <ul class="sidebar-nav">
+      <li class="sidebar-brand"><a href="http://github.com/haskell-workshop">
+        <img src="/img/github.png" /></a>
+        <p>Follow us on Github!</p>
+      </li>
+      <li><a href="/">Home</a><p> </p></li>
+      <li id="co"><a href="/colophon">Colophon</a><p>About Us</p></li>
+      <li id="ev"><a href="/events">Events</a><p>Meet Up</p></li>
+      <li id="tu"><a href="/tutorials">Tutorials</a><p>Learn</p></li>
+    </ul>
+ </div>
+
+
+
+        <div id="header">
+            <div id="logo">
+                <a href="/">Haskell Workshop</a>
+            </div>
+            <div id="navigation">
+                 
+                <!--a href="/colophon/">About</a>
+                <a href="/contact/">Contact</a>
+                <a href="/events/">Events</a>
+                <a href="/archive/">Archive</a-->
+            </div>
+        </div>
+
+            <h1>&quot;Mavericks and GHC&quot;</h1>
+
+            <div class="info">
+    Posted on October 23, 2013
+    
+        by katychuang
+    
+</div>
+
+<p>Were you trigger happy with the installation of OSX Mavericks? Here are quick steps to bring your haskell back. Tips referenced from <a href="http://www.reddit.com/r/haskell/comments/1ozukp/anyone_running_ghc_763_on_osx_mavericks/ccy9wnv?context=3">cartazio</a>:</p>
+<ol style="list-style-type: decimal">
+<li><p>Make sure you have <a href="https://developer.apple.com/downloads/index.action">xcode 5 cli tools for OSX Mavericks</a> installed. Go to that link, download and install.</p></li>
+<li><p>Get the proper gcc version. Open up your terminal and type <code>brew install apple-gcc42</code> and then followed by <code>brew link apple-gcc42</code>. Test things out with a fresh new terminal window and type <code>which gcc-4.2</code>. Note that you may have to update <code>brew update</code>. (you may have to uninstall or brew update, or brew link apple-gcc42)</p></li>
+</ol>
+<p>{% highlight sh %} $ brew install apple-gcc42 ==&gt; Downloading http://r.research.att.com/tools/gcc-42-5666.3-darwin11.pkg Already downloaded: /Library/Caches/Homebrew/apple-gcc42-4.2.1-5666.3.pkg ==&gt; Caveats NOTE: This formula provides components that were removed from XCode in the 4.2 release. There is no reason to install this formula if you are using a version of XCode prior to 4.2.</p>
+<p>This formula contains compilers built from Apple’s GCC sources, build 5666.3, available from:</p>
+<p>http://opensource.apple.com/tarballs/gcc</p>
+<p>All compilers have a <code>-4.2</code> suffix. A GFortran compiler is also included. ==&gt; Summary /usr/local/Cellar/apple-gcc42/4.2.1-5666.3: 104 files, 75M, built in 7 seconds</p>
+<p>$ brew link apple-gcc42 Linking /usr/local/Cellar/apple-gcc42/4.2.1-5666.3… 21 symlinks created</p>
+<p>$ which gcc-4.2 /usr/local/bin/gcc-4.2 {% endhighlight %}</p>
+<ol start="3" style="list-style-type: decimal">
+<li><p>Install haskell platform with updated $PATH. If you don’t know how to do this, it’s best to ask someone to help you with this step, because it can vary depending on your operating system.</p></li>
+<li><p>Point ghc compiler to gcc42. There are a few steps to do this, read carefully as doing the wrong thing can mess up your whole installation. Find out where gcc42 is with <code>which gcc-4.2</code> and then point to that in your ghc settings file.</p></li>
+</ol>
+<p>{% highlight sh %} # Location of your settings file $ ghc-pkg list /path/to/ghc/…conf</p>
+<h1 id="edit-line-2-of-settings">Edit line 2 of settings</h1>
+<p>$ vim /path/to/ghc/settings {% endhighlight %}</p>
+<p>The change will look like</p>
+<p>{% highlight vim %}  (“C compiler command”, “/usr/local/bin/gcc-4.2”), {% endhighlight %}</p>
+<ol start="5" style="list-style-type: decimal">
+<li><p>:beers:</p></li>
+<li><p>Make sure you have a fresh cabal for these commands</p></li>
+</ol>
+<p>{% highlight sh %} $ cabal install cabal-install $ cabal – version cabal-install version 1.18.0.2 using version 1.18.1 of the Cabal library {% endhighlight %}</p>
+<ol start="7" style="list-style-type: decimal">
+<li>Proceed with installing dependencies for this project.</li>
+</ol>
+<p>{% highlight sh %} $ cd gloss-starter $ cabal install $ cabal build $ dist/build/gloss-starter/gloss-starter {% endhighlight %}</p>
+<p>===</p>
+<p><strong>Tip: </strong></p>
+<p><code>rm -rf ~/.ghc</code> if you want to remove installed packages.</p>
+
+        </div>
+
+        <div id="footer">
+            Site generated by
+            <a href="http://jaspervdj.be/hakyll">Hakyll</a>
+        </div>
+
+
+    </body>
+
+    <!-- Bootstrap core JavaScript -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <script src="/js/jquery.js"></script>
+    <script src="/js/bootstrap.js"></script>
+    <script src="/js/custom.js"></script>
+</html>
