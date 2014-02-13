@@ -1,5 +1,5 @@
 ---
-title: Tutorials
+title: Getting Started Tutorials
 ---
 
 Let's get your machine set up. Follow instructions for your operating system.
@@ -38,7 +38,7 @@ Time to choose your adventure... Here are three tracks to get you started in cod
 <h3>Project Euler</h3>
 <p>A series of challenging mathematical/computer programming problems.</p>
 <p><a href="http://projecteuler.net/" class="btn btn-primary">About</a></p>
-              
+
 
 <h3>Web</h3>
 <img src="/img/memoi.se.png" height="240" width="193">
@@ -52,4 +52,4 @@ Time to choose your adventure... Here are three tracks to get you started in cod
 <h3>Gloss</h3>
 <p>Painless 2D vector graphics, animations and simulations.</p>
 <p><a href="http://hackage.haskell.org/package/gloss" class="btn btn-primary">Docs</a> <a href="http://github.com/haskell-workshop/gloss-starter/" class="btn btn-default">Tutorial</a></p>
-           
+
