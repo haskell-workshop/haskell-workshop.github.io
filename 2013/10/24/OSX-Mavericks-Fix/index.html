@@ -69,30 +69,56 @@
 <li><p>Make sure you have <a href="https://developer.apple.com/downloads/index.action">xcode 5 cli tools for OSX Mavericks</a> installed. Go to that link, download and install.</p></li>
 <li><p>Get the proper gcc version. Open up your terminal and type <code>brew install apple-gcc42</code> and then followed by <code>brew link apple-gcc42</code>. Test things out with a fresh new terminal window and type <code>which gcc-4.2</code>. Note that you may have to update <code>brew update</code>. (you may have to uninstall or brew update, or brew link apple-gcc42)</p></li>
 </ol>
-<p>{% highlight sh %} $ brew install apple-gcc42 ==&gt; Downloading http://r.research.att.com/tools/gcc-42-5666.3-darwin11.pkg Already downloaded: /Library/Caches/Homebrew/apple-gcc42-4.2.1-5666.3.pkg ==&gt; Caveats NOTE: This formula provides components that were removed from XCode in the 4.2 release. There is no reason to install this formula if you are using a version of XCode prior to 4.2.</p>
-<p>This formula contains compilers built from Apple’s GCC sources, build 5666.3, available from:</p>
-<p>http://opensource.apple.com/tarballs/gcc</p>
-<p>All compilers have a <code>-4.2</code> suffix. A GFortran compiler is also included. ==&gt; Summary /usr/local/Cellar/apple-gcc42/4.2.1-5666.3: 104 files, 75M, built in 7 seconds</p>
-<p>$ brew link apple-gcc42 Linking /usr/local/Cellar/apple-gcc42/4.2.1-5666.3… 21 symlinks created</p>
-<p>$ which gcc-4.2 /usr/local/bin/gcc-4.2 {% endhighlight %}</p>
+<pre class="sh"><code>$ brew install apple-gcc42
+==&gt; Downloading http://r.research.att.com/tools/gcc-42-5666.3-darwin11.pkg
+Already downloaded: /Library/Caches/Homebrew/apple-gcc42-4.2.1-5666.3.pkg
+==&gt; Caveats
+NOTE:
+This formula provides components that were removed from XCode in the 4.2
+release. There is no reason to install this formula if you are using a
+version of XCode prior to 4.2.
+
+This formula contains compilers built from Apple's GCC sources, build
+5666.3, available from:
+
+ http://opensource.apple.com/tarballs/gcc
+
+All compilers have a `-4.2` suffix. A GFortran compiler is also included.
+==&gt; Summary
+ /usr/local/Cellar/apple-gcc42/4.2.1-5666.3: 104 files, 75M, built in 7 seconds
+
+$  brew link apple-gcc42
+Linking /usr/local/Cellar/apple-gcc42/4.2.1-5666.3... 21 symlinks created
+
+$ which gcc-4.2
+/usr/local/bin/gcc-4.2</code></pre>
 <ol start="3" style="list-style-type: decimal">
 <li><p>Install haskell platform with updated $PATH. If you don’t know how to do this, it’s best to ask someone to help you with this step, because it can vary depending on your operating system.</p></li>
 <li><p>Point ghc compiler to gcc42. There are a few steps to do this, read carefully as doing the wrong thing can mess up your whole installation. Find out where gcc42 is with <code>which gcc-4.2</code> and then point to that in your ghc settings file.</p></li>
 </ol>
-<p>{% highlight sh %} # Location of your settings file $ ghc-pkg list /path/to/ghc/…conf</p>
-<h1 id="edit-line-2-of-settings">Edit line 2 of settings</h1>
-<p>$ vim /path/to/ghc/settings {% endhighlight %}</p>
+<pre class="sh"><code># Location of your settings file
+$ ghc-pkg list
+/path/to/ghc/...conf
+
+# Edit line 2 of settings
+$ vim /path/to/ghc/settings</code></pre>
 <p>The change will look like</p>
-<p>{% highlight vim %}  (“C compiler command”, “/usr/local/bin/gcc-4.2”), {% endhighlight %}</p>
+<pre class="vim"><code> (&quot;C compiler command&quot;, &quot;/usr/local/bin/gcc-4.2&quot;),</code></pre>
 <ol start="5" style="list-style-type: decimal">
 <li><p>:beers:</p></li>
 <li><p>Make sure you have a fresh cabal for these commands</p></li>
 </ol>
-<p>{% highlight sh %} $ cabal install cabal-install $ cabal – version cabal-install version 1.18.0.2 using version 1.18.1 of the Cabal library {% endhighlight %}</p>
+<pre class="sh"><code>$ cabal install cabal-install
+$ cabal -- version
+cabal-install version 1.18.0.2
+using version 1.18.1 of the Cabal library</code></pre>
 <ol start="7" style="list-style-type: decimal">
 <li>Proceed with installing dependencies for this project.</li>
 </ol>
-<p>{% highlight sh %} $ cd gloss-starter $ cabal install $ cabal build $ dist/build/gloss-starter/gloss-starter {% endhighlight %}</p>
+<pre class="sh"><code>$ cd gloss-starter
+$ cabal install
+$ cabal build
+$ dist/build/gloss-starter/gloss-starter</code></pre>
 <p>===</p>
 <p><strong>Tip: </strong></p>
 <p><code>rm -rf ~/.ghc</code> if you want to remove installed packages.</p>
