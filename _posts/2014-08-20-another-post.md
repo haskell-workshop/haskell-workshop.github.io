@@ -2,6 +2,7 @@
 title: Lorem Ipsum Dolor Sit Amet
 featured: /assets/images/pic02.jpg
 layout: post
+published: false
 ---
 
 <p>Integer volutpat ante et accumsan commophasellus sed aliquam feugiat lorem aliquet ut enim rutrum phasellus iaculis accumsan dolore magna aliquam veroeros.</p>
